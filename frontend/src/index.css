@@ -1,0 +1,385 @@
+/* ===================== RentEase Design Tokens ===================== */
+:root {
+  /* Brand palette - deep teal (sustainability/circularity) + warm coral accent */
+  --re-primary: #0f6e5d;
+  --re-primary-dark: #0a4f42;
+  --re-primary-light: #e3f3ef;
+  --re-accent: #ff7a45;
+  --re-accent-dark: #e85f2a;
+  --re-ink: #1f2533;
+  --re-ink-soft: #5b6472;
+  --re-bg: #f6f8f7;
+  --re-surface: #ffffff;
+  --re-border: #e3e7e4;
+  --re-success: #1f9d55;
+  --re-warning: #d99416;
+  --re-danger: #d64545;
+
+  /* Typography */
+  --re-font-display: 'Poppins', sans-serif;
+  --re-font-body: 'Inter', sans-serif;
+
+  /* Bootstrap variable overrides */
+  --bs-primary: var(--re-primary);
+  --bs-primary-rgb: 15, 110, 93;
+  --bs-body-font-family: var(--re-font-body);
+  --bs-body-color: var(--re-ink);
+  --bs-body-bg: var(--re-bg);
+  --bs-border-radius: 0.6rem;
+  --bs-border-radius-lg: 0.9rem;
+  --bs-border-radius-sm: 0.4rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--re-font-body);
+  background-color: var(--re-bg);
+  color: var(--re-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--re-font-display);
+  color: var(--re-ink);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ===================== Buttons ===================== */
+.btn-primary {
+  background-color: var(--re-primary);
+  border-color: var(--re-primary);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--re-primary-dark);
+  border-color: var(--re-primary-dark);
+}
+.btn-outline-primary {
+  color: var(--re-primary);
+  border-color: var(--re-primary);
+}
+.btn-outline-primary:hover {
+  background-color: var(--re-primary);
+  border-color: var(--re-primary);
+}
+.btn-accent {
+  background-color: var(--re-accent);
+  border-color: var(--re-accent);
+  color: #fff;
+}
+.btn-accent:hover {
+  background-color: var(--re-accent-dark);
+  border-color: var(--re-accent-dark);
+  color: #fff;
+}
+.btn-primary:active,
+.btn-primary.active,
+.btn-check:checked + .btn-primary {
+  background-color: var(--re-primary-dark) !important;
+  border-color: var(--re-primary-dark) !important;
+}
+.btn-outline-primary:active,
+.btn-outline-primary.active,
+.btn-check:checked + .btn-outline-primary {
+  background-color: var(--re-primary) !important;
+  border-color: var(--re-primary) !important;
+  color: #fff !important;
+}
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(15, 110, 93, 0.4);
+  outline-offset: 2px;
+}
+
+/* ===================== Navbar ===================== */
+.re-navbar {
+  background-color: var(--re-surface);
+  border-bottom: 1px solid var(--re-border);
+}
+.re-brand {
+  font-family: var(--re-font-display);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--re-primary-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.re-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: conic-gradient(var(--re-primary) 0deg 270deg, var(--re-accent) 270deg 360deg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.re-brand-mark::after {
+  content: '';
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--re-surface);
+}
+.re-nav-link {
+  color: var(--re-ink-soft) !important;
+  font-weight: 500;
+}
+.re-nav-link.active,
+.re-nav-link:hover {
+  color: var(--re-primary) !important;
+}
+.re-cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  font-size: 0.65rem;
+}
+
+/* ===================== Hero ===================== */
+.re-hero {
+  background: linear-gradient(135deg, var(--re-primary-dark) 0%, var(--re-primary) 100%);
+  color: #fff;
+  border-radius: 0 0 2rem 2rem;
+}
+.re-hero h1 {
+  color: #fff;
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  line-height: 1.15;
+}
+.re-hero .lead {
+  color: rgba(255, 255, 255, 0.88);
+}
+.re-hero-stat {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 0.9rem 1.1rem;
+}
+
+/* ===================== Category & Product Cards ===================== */
+.re-category-card {
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  height: 100%;
+}
+.re-category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 110, 93, 0.12);
+}
+.re-category-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--re-primary-light);
+  color: var(--re-primary);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.re-product-card {
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: var(--bs-border-radius-lg);
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.re-product-card:hover {
+  box-shadow: 0 12px 28px rgba(31, 37, 51, 0.1);
+  transform: translateY(-2px);
+}
+.re-product-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background-color: var(--re-border);
+}
+.re-product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.re-price {
+  color: var(--re-primary-dark);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.re-price-sub {
+  color: var(--re-ink-soft);
+  font-size: 0.8rem;
+}
+.re-stock-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+}
+
+/* ===================== Status badges ===================== */
+.re-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.32rem 0.6rem;
+  border-radius: 999px;
+  text-transform: capitalize;
+  display: inline-block;
+}
+.re-badge-pending { background: #fff2dc; color: #946200; }
+.re-badge-confirmed { background: #e3effe; color: #1556a8; }
+.re-badge-delivered { background: #e3f3ef; color: var(--re-primary-dark); }
+.re-badge-active { background: #e1f6ea; color: var(--re-success); }
+.re-badge-return_requested { background: #fdeee3; color: var(--re-accent-dark); }
+.re-badge-completed { background: #e9eaee; color: var(--re-ink-soft); }
+.re-badge-cancelled { background: #fde7e7; color: var(--re-danger); }
+.re-badge-open { background: #fde7e7; color: var(--re-danger); }
+.re-badge-in_progress { background: #fff2dc; color: #946200; }
+.re-badge-resolved { background: #e1f6ea; color: var(--re-success); }
+
+/* ===================== Auth / Forms ===================== */
+.re-auth-card {
+  max-width: 440px;
+  margin: 0 auto;
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 2rem;
+}
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--re-primary);
+  box-shadow: 0 0 0 0.2rem rgba(15, 110, 93, 0.15);
+}
+
+/* ===================== Dashboard / Admin ===================== */
+.re-admin-shell {
+  display: flex;
+  min-height: calc(100vh - 64px);
+}
+.re-admin-sidebar {
+  width: 220px;
+  background: var(--re-surface);
+  border-right: 1px solid var(--re-border);
+  flex-shrink: 0;
+}
+.re-admin-sidebar .nav-link {
+  color: var(--re-ink-soft);
+  border-radius: var(--bs-border-radius-sm);
+  padding: 0.6rem 0.9rem;
+  font-weight: 500;
+  margin: 0.15rem 0.6rem;
+}
+.re-admin-sidebar .nav-link.active {
+  background: var(--re-primary-light);
+  color: var(--re-primary-dark);
+}
+.re-admin-main {
+  flex: 1;
+  padding: 1.5rem;
+  min-width: 0;
+}
+.re-kpi-card {
+  background: var(--re-surface);
+  border: 1px solid var(--re-border);
+  border-radius: var(--bs-border-radius-lg);
+  padding: 1.1rem 1.25rem;
+  height: 100%;
+}
+.re-kpi-value {
+  font-family: var(--re-font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--re-primary-dark);
+}
+.re-kpi-label {
+  color: var(--re-ink-soft);
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+/* Mobile off-canvas admin nav trigger */
+.re-admin-mobile-bar {
+  display: none;
+}
+@media (max-width: 768px) {
+  .re-admin-shell {
+    flex-direction: column;
+  }
+  .re-admin-sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid var(--re-border);
+  }
+  .re-admin-sidebar .nav {
+    flex-direction: row !important;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding: 0.4rem;
+  }
+  .re-admin-sidebar .nav-link {
+    white-space: nowrap;
+  }
+}
+
+/* ===================== Misc ===================== */
+.re-section-eyebrow {
+  color: var(--re-primary);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+.re-empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--re-ink-soft);
+}
+.table-responsive table {
+  font-size: 0.92rem;
+}
+footer.re-footer {
+  background: var(--re-primary-dark);
+  color: rgba(255, 255, 255, 0.85);
+}
+footer.re-footer a {
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .re-hero h1 {
+    font-size: 1.7rem;
+  }
+  .re-auth-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Fix: main content must grow, never shrink — prevents overflow under sticky footer */
+.re-main-content {
+  flex: 1 0 auto;
+}
