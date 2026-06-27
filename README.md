@@ -269,7 +269,7 @@ rental-platform/
 npm install                        # Install all at once (see package.json)
 ```
 
-Individual packages:
+Individual packages 1:
 
 | Package | Purpose |
 |---------|---------|
